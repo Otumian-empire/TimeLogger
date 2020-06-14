@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- <link rel="stylesheet" href="{% static 'timeapp/css/bootstrap.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'timeapp/css/materialize.min.css' %}"> -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'timeapp/css/customcss.css' %}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">TimeLoggerApp</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/timeapp/">Home</a></li>
+                <li><a href="/timeapp/">Tasks</a></li>
+                <li><a href="/timeapp/">Stats</a></li>
+                <li><a href="/timeapp/">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/timeapp/">Home</a></li>
+        <li><a href="/timeapp/">Tasks</a></li>
+        <li><a href="/timeapp/">Stats</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="/timeapp/">About</a></li>
+    </ul>

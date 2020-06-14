@@ -5,3 +5,10 @@ db.sqlite3
 db.sqlite3-journal
 static/
 db.sqlite3
+
+
+# uncomment these lines if needed
+timeapp/templates/timeapp/login.html
+timeapp/templates/timeapp/start_work.html
+timeapp/templates/timeapp/stats.html
+timeapp/templates/timeapp/user.html

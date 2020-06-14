@@ -1,0 +1,68 @@
+{% extends "timeapp/base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+{% block body %}
+{% load static %}
+
+<h1 class="center-align">{{ title }}</h1>
+
+<!-- display all users -->
+<h3 class="center-align">display all users</h3>
+<table class="responsive-table centered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>
+                {{ user.username }}
+            </td>
+            <td>
+                {% if user.is_active %}
+                <i class="tiny material-icons green-text">check</i>
+                {% else %}
+                in-active
+                {% endif %}
+            </td>
+            <td>
+                {% if user.is_superuser %}
+                admin
+                {% else %}
+                dev
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<!-- display all task  and who created it -->
+<h3 class="center-align">display all task</h3>
+<div class="container center-align">
+    {% for user_task in user_tasks %}
+    <div class="row">
+        <div class="col-auto s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">{{ user_task.tid.title }}</span>
+                    <p>{{ user_task.tid.description }}</p>
+                </div>
+                <div class="card-action">
+                    View <a href="#">Stats</a>
+                    Created by <a href="#">{{ user_task.uid.username }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
