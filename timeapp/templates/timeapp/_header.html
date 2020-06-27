@@ -6,35 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
 
-    <!-- <link rel="stylesheet" href="{% static 'timeapp/css/bootstrap.css' %}"> -->
-    <!-- <link rel="stylesheet" href="{% static 'timeapp/css/materialize.min.css' %}"> -->
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'timeapp/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'timeapp/css/customcss.css' %}">
     <title>{% block title %} {% endblock %}</title>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">TimeLoggerApp</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/timeapp/">Home</a></li>
-                <li><a href="/timeapp/">Tasks</a></li>
-                <li><a href="/timeapp/">Stats</a></li>
-                <li><a href="/timeapp/">About</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container-fluid p-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class=" navbar-brand" href="/timeapp/">TimeLoggerApp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="/timeapp/">Home</a></li>
-        <li><a href="/timeapp/">Tasks</a></li>
-        <li><a href="/timeapp/">Stats</a></li>
-        <li class="divider" tabindex="-1"></li>
-        <li><a href="/timeapp/">About</a></li>
-    </ul>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/timeapp/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/timeapp/tasks/">Task</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/timeapp/stats/">Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/timeapp/about/">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
